@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+/* enable class-based dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+/* ===== GLOBAL BACKGROUND ===== */ body { @apply min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-purple-100 dark:from-[#020617] dark:via-[#0f172a] dark:to-[#020617] transition-all duration-500; }
+/* ===== GLASS CARD ===== */ .glass { @apply backdrop-blur-xl bg-white/70 dark:bg-white/10 border border-white/40 dark:border-white/10 shadow-lg rounded-2xl; }
+/* ===== PREMIUM BUTTON ===== */ .btn-premium { @apply px-5 py-2 rounded-full font-semibold text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 hover:scale-105 hover:shadow-xl transition; }
+/* ===== PREMIUM INPUT ===== */ .input-premium { @apply px-5 py-3 rounded-full bg-white/80 dark:bg-white/10 border border-white/40 dark:border-white/10 backdrop-blur-xl outline-none focus:ring-2 focus:ring-indigo-400; }
+
+/* 🌤 Light theme */
+:root {
+  --bg-light: #f8fbff;
+  --card-light: rgba(255,255,255,0.6);
+  --border-light: rgba(0,0,0,0.08);
+}
+
+/* 🌙 Dark theme */
+.dark {
+  --bg-dark: #020617;
+  --card-dark: rgba(15,23,42,0.6);
+  --border-dark: rgba(255,255,255,0.08);
+}
+
+.animated-gradient-text {
+  position: relative;
+  color: transparent;
+  background: linear-gradient(90deg, #3b82f6, #22d3ee);
+  -webkit-background-clip: text;
+}
+
+.animated-gradient-text::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  animation: shine 2.5s infinite;
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
