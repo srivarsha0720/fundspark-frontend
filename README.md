@@ -101,19 +101,11 @@ Password: 123456
 
 ---
 
-## 📸 Screenshots
 
-
-- Home Page
-- Create Project Page
-- Dashboard
-- Project Details Page
-
----
 
 ## 🎥 Video Walkthrough
 
-
+https://drive.google.com/file/d/19E5Xj695UfdNSK-5d7wnegB8FVhEq1mS/view?usp=sharing
 
 ---
 
