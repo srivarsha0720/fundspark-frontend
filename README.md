@@ -67,8 +67,8 @@ npm install
 Create a `.env` file and add:
 
 ```
-VITE_SUPABASE_URL=your_supabase_project_url
-VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_URL=https://atnhicltjrorhskvxyxn.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0bmhpY2x0anJvcmhza3Z4eXhuIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MjAxNjg0MSwiZXhwIjoyMDg3NTkyODQxfQ.tUET98X_MSkNEv7wYS2xHuCZohflBd4pPZdMfQdeaxI
 ```
 
 ### 5️⃣ Start Development Server
