@@ -13,7 +13,7 @@ const [sortBy, setSortBy] = useState("trending");
 useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/projects");
+        const res = await fetch("https://fundspark-backend.onrender.com/api/projects");
         const data = await res.json();
 
         if (res.ok) {
@@ -28,21 +28,12 @@ useEffect(() => {
 
     fetchProjects();
   }, []);
-  /* ===== FILTER CATEGORY ===== */
-  // const filteredProjects =
-  //   category === "all"
-  //     ? projects
-  //     : projects.filter(
-  //         (p) => p.category?.toLowerCase() === category?.toLowerCase()
-  //       );
+ 
 
 
 const finalProjects = projects
   .filter((p) => {
-    // category filter
-    // const matchesCategory =
-    //   category === "all" ||
-    //   p.category?.toLowerCase().trim() === category.toLowerCase().trim();
+    
 
     const normalizedProjectCategory =
   p.category?.toLowerCase().trim().replace(/\s+/g, "-");

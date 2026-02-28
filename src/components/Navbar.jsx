@@ -74,11 +74,7 @@ if (location.pathname === "/login" || location.pathname === "/signup") {
         {/* gradient brand logo */}
 
         {/* Search Bar */}
-        {/* <input
-          type="text"
-          placeholder="Search projects, creators, and categories"
-          className="hidden md:block w-[40%] px-5 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
-        /> */}
+        
         {/* responsive search bar */}
 
         {/* Right Buttons */}

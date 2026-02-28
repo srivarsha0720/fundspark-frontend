@@ -55,44 +55,12 @@ if (!user) {
     alert("Please fill required fields");
     return;
   }
-//   const stored = JSON.parse(localStorage.getItem("projects")) || [];
-//   const newProject = {
-//   id: Date.now(),
-//   title,
-//   desc,
-//   image,
-//   category: category.toLowerCase(),
-//   goal: Number(goal),
-//   deadline,
-//   // creator: user.email,
-//   creator_id:user.id,
 
-//   rewards: rewards
-//   .filter((r) => r.title && r.amount)
-//   .map((r) => ({
-//     title: r.title,
-//     amount: Number(r.amount),
-//     description: r.description
-//   })),
 
-//   // ⭐ MULTIPLE milestones saved
-//   milestones: milestones
-//     .filter((m) => m.title && m.amount)
-//     .map((m) => ({
-//       title: m.title,
-//       amount: Number(m.amount),
-//     })),
-
-//   raised: 0,
-//   backers: 0,
-// };
-//   localStorage.setItem("projects", JSON.stringify([newProject, ...stored]));
-//   alert("Project Created ✅");
-//   navigate("/category/all");
 
 const token = localStorage.getItem("token");
 
-const res = await fetch("http://localhost:5000/api/projects/create", {
+const res = await fetch("/api/projects/create", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -132,14 +100,6 @@ if (res.ok) {
     shadow-lg
   ">
       <h1 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-4">Create Project</h1>
-{/* 
-    <input
-  type="text"
-  placeholder="Creator Name"
-  value={creator}
-  onChange={(e) => setCreator(e.target.value)}
-  className="w-full border p-2 rounded"
-/> */}
 
       <input
         placeholder="Project Title"

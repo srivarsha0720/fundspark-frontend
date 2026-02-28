@@ -12,11 +12,7 @@ const ProjectDetails = () => {
   /* ===== LOAD PROJECT FROM LOCAL STORAGE ===== */
 const [project, setProject] = useState(null);
 const [loading, setLoading] = useState(true);
-/* ===== COMMENT STATES ===== */
-  // const [comment, setComment] = useState("");
-  // const [comments, setComments] = useState([]);
-  // const [editingId, setEditingId] = useState(null);
-  // const [editText, setEditText] = useState("");
+
   // COMMENTS
 const [comments, setComments] = useState([]);
 const [commentText, setCommentText] = useState("");
@@ -42,22 +38,7 @@ const [cvv, setCvv] = useState("");
 
 const [cardError, setCardError] = useState("");
 const [daysLeft, setDaysLeft] = useState(0);
-/* ⭐ state */
 
-// const getDaysLeft = (deadline) => {
-//   if (!deadline) return 0;
-
-//   const diff =
-//     new Date(deadline).getTime() - new Date().getTime();
-
-//   return Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
-// };
-
-// useEffect(() => {
-//   if (project?.deadline) {
-//     setDaysLeft(getDaysLeft(project.deadline));
-//   }
-// }, [project?.deadline]);
 const getDaysLeft = (deadline) => {
   if (!deadline) return 0;
 
@@ -179,7 +160,7 @@ const handlePostComment = async () => {
 
   try {
     const res = await fetch(
-      `http://localhost:5000/api/projects/${id}/comments`,
+      `https://fundspark-backend.onrender.com/api/projects/${id}/comments`,
       {
         method: "POST",
         headers: {
@@ -204,7 +185,7 @@ const handlePostComment = async () => {
 const handleDeleteComment = async (commentId) => {
   const token = localStorage.getItem("token");
 
-  await fetch(`http://localhost:5000/api/comments/${commentId}`, {
+  await fetch(`https://fundspark-backend.onrender.com/api/comments/${commentId}`, {
     method: "DELETE",
     headers: { Authorization: `Bearer ${token}` },
   });
@@ -215,7 +196,7 @@ const handleDeleteComment = async (commentId) => {
 const handleSaveEdit = async (commentId) => {
   const token = localStorage.getItem("token");
 
-  await fetch(`http://localhost:5000/api/comments/${commentId}`, {
+  await fetch(`https://fundspark-backend.onrender.com/api/comments/${commentId}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -231,7 +212,7 @@ const handleSaveEdit = async (commentId) => {
 
   const fetchProject = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/projects/${id}`);
+      const res = await fetch(`https://fundspark-backend.onrender.com/api/projects/${id}`);
       const data = await res.json();
 
       if (res.ok) {
@@ -245,7 +226,7 @@ const handleSaveEdit = async (commentId) => {
   };
   const fetchUpdates = async () => {
     try {
-      const res = await fetch(`http://localhost:5000/api/projects/${id}/updates`);
+      const res = await fetch(`https://fundspark-backend.onrender.com/api/projects/${id}/updates`);
       const data = await res.json();
        console.log("updates:", data); 
        if(res.ok){
@@ -258,7 +239,7 @@ const handleSaveEdit = async (commentId) => {
   const fetchComments = async () => {
   try {
     const res = await fetch(
-      `http://localhost:5000/api/projects/${id}/comments`
+      `https://fundspark-backend.onrender.com/api/projects/${id}/comments`
     );
     const data = await res.json();
     setComments(data);
@@ -274,95 +255,16 @@ useEffect(() => {
 
 
 
-// useEffect(() => {
-//   if (!project?.deadline) return;
-
-//   const calculateDays = () => {
-//     const diff =
-//       new Date(project.deadline).getTime() - new Date().getTime();
-
-//     const days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
-
-//     setDaysLeft(days);
-//   };
-
-//   calculateDays(); // run immediately
-
-//   const interval = setInterval(calculateDays, 60000); // update every minute
-
-//   return () => clearInterval(interval);
-// }, [project?.deadline]);
-/* ⭐ helper */
 
 
 
 
-
-
-  // get projects from localStorage
-// const storedProjects = JSON.parse(localStorage.getItem("projects")) || [];
-
-// // find current project
-// const project = storedProjects.find((p) => p.id === Number(id));
-// if (!project) return <div className="p-10">Project not found</div>;
-
-
-
- 
-// useEffect(() => {
-//   const stored = localStorage.getItem(`updates-${id}`);
-//   if (stored) setUpdates(JSON.parse(stored));
-// }, [id]);
-
-  
-  // useEffect(() => {
-  //   const stored = localStorage.getItem(`comments-${id}`);
-  //   if (stored) setComments(JSON.parse(stored));
-  // }, [id]);
-
-
-
-  // const handlePostComment = () => {
-  //   if (!comment.trim()) return;
-
-  //   const newComment = {
-  //     id: Date.now(),
-  //     text: comment,
-  //    user:  user?.email || "Anonymous",
-  //     time: new Date().toLocaleString(),
-  //   };
-
-  //   const updated = [newComment, ...comments];
-  //   setComments(updated);
-  //   localStorage.setItem(`comments-${id}`, JSON.stringify(updated));
-  //   setComment("");
-  // };
-
-  // const handleDelete = (commentId) => {
-  //   const updated = comments.filter((c) => c.id !== commentId);
-  //   setComments(updated);
-  //   localStorage.setItem(`comments-${id}`, JSON.stringify(updated));
-  // };
-
-  // const handleEditSave = (commentId) => {
-  //   if (!editText.trim()) return;
-
-  //   const updated = comments.map((c) =>
-  //     c.id === commentId ? { ...c, text: editText } : c
-  //   );
-
-  //   setComments(updated);
-  //   localStorage.setItem(`comments-${id}`, JSON.stringify(updated));
-
-  //   setEditingId(null);
-  //   setEditText("");
-  // };
 const handlePostUpdate = async () => {
   if (!updateText.trim()) return;
 
   try {
     const res = await fetch(
-      `http://localhost:5000/api/projects/${id}/updates`,
+      `https://fundspark-backend.onrender.com/api/projects/${id}/updates`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -380,84 +282,10 @@ const handlePostUpdate = async () => {
     console.log(err);
   }
 };
-// const handlePostUpdate = () => {
-//   if (!user) return;
-
-//   /* ⭐ only creator can post */
-//   //if (user. email!== project.creator) {
-//     if (user.id !== project.creator_id) {
-//     alert("Only creator can post updates");
-//     return;
-//   }
-
-//   if (!updateText.trim()) return;
-
-  // const newUpdate = {
-  //   id: Date.now(),
-  //   text: updateText,
-  //   time: new Date().toLocaleString(),
-  // };
-
-//   const updated = [newUpdate, ...updates];
-//   setUpdates(updated);
-//   localStorage.setItem(`updates-${id}`, JSON.stringify(updated));
-//   setUpdateText("");
-// };
 
 
-  // if (!project) return <div className="p-10">Project not found</div>;
 
-  // const percent = project.goal
-  //   ? Math.round((project.raised / project.goal) * 100)
-  //   : 0;
 
-    // ===== FUND PROJECT =====
-//   const handleFund = async () => {
-//     if (!user) {
-//     alert("Login to fund project");
-//     navigate("/login");
-//     return;
-//   }
-//   // ❌ stop if goal already reached
-//   if (project.raised >= project.goal) {
-//     alert("🎉 Goal already reached. Funding closed.");
-//     return;
-//   }
-//   // ❌ stop if deadline passed
-//   if (project.deadline && new Date(project.deadline) < new Date()) {
-//     alert("⏳ Campaign ended. Funding closed.");
-//     return;  }
-//   const amount = Number(prompt("Enter amount to fund"));
-//   if (!amount || amount <= 0) return;
-//   // ❌ prevent exceeding goal
-//   const remaining = project.goal - project.raised;
-//   if (amount > remaining) {
-//     alert(`Only ₹${remaining} needed to reach goal`);
-//     return;
-//   }
-//   const token = localStorage.getItem("token");
-// try {
-//   const res = await fetch(
-//     `http://localhost:5000/api/projects/fund/${project.id}`,
-//     {
-//       method: "PUT",
-//       headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Bearer ${token}`,
-//       },
-//       body: JSON.stringify({ amount }),
-//     }
-//   );
-//   const data = await res.json();
-//   if (res.ok) {
-//     alert("Funding successful 🎉");
-//     window.location.reload();
-//   } else {
-//     alert(data.message);  }
-// } catch (err) {
-//   console.log(err);
-//   alert("Funding failed");
-// }
 
 const handleConfirmPayment = async () => {
   if (!user) {
@@ -528,40 +356,6 @@ const handleConfirmPayment = async () => {
     alert("Payment failed");
   }
 
-
-
-
-
-// const handleCardNumber = (e) => {
-//     let value = e.target.value.replace(/\D/g, "");
-
-//     if (value.length > 16) value = value.slice(0, 16);
-
-//     value = value.replace(/(.{4})/g, "$1 ").trim();
-
-//     setCardNumber(value);
-//   };
-
-  // const updatedProjects = storedProjects.map((p) => {
-  //   if (p.id === project.id) {
-  //     return {
-  //       ...p,
-  //       raised: (p.raised || 0) + amount,
-  //       backers: (p.backers || 0) + 1,
-  //     };
-  //   }
-  //   return p;
-  // });
-
-  // localStorage.setItem("projects", JSON.stringify(updatedProjects));
-
-  // window.location.reload();
-
-
-
-
-
-
   
 };
 if (loading) return <div className="p-10">Loading...</div>;
@@ -589,18 +383,10 @@ const percent = project.goal
           />
 
           <h1 className="text-3xl font-bold mt-5">{project.title}</h1>
-{/* 
-          <p className="text-gray-600 mt-3">{project.desc}</p> */}
+
           <p className="text-gray-600 mt-3">{project.description}</p>
 
-          {/* STORY
-          <div className="mt-8">
-            <h2 className="text-xl font-semibold mb-3">Story</h2>
-            <p className="text-gray-600">
-              {project.desc || "Story will be updated soon."}
-            </p>
-          </div> */}
-
+         
           {/* TABS */}
           <div className="flex gap-6 mt-10 border-b pb-2">
             {["rewards", "milestones", "updates", "comments"].map((t) => (
@@ -617,34 +403,7 @@ const percent = project.goal
               </button>
             ))}
           </div>
-{/* REWARDS */}
-         
-{/* {tab === "rewards" && (
-  <div className="mt-6">
-    {project.rewards && project.rewards.length > 0 ? (
-      <div className="space-y-4">
-        {project.rewards.map((reward, index) => (
-          <div
-            key={index}
-            className="border rounded-xl p-5 shadow-sm bg-white"
-          >
-            <h4 className="font-semibold text-lg">{reward.title}</h4>
 
-            {reward.description && (
-              <p className="text-gray-600 mt-1">{reward.description}</p>
-            )}
-
-            <p className="font-bold mt-2 text-indigo-600">
-              ₹{reward.amount}
-            </p>
-          </div>
-        ))}
-      </div>
-    ) : (
-      <p className="text-gray-500">No rewards added</p>
-    )}
-  </div>
-)} */}
     {tab === "rewards" && (
   <div className="mt-6">
 
@@ -681,43 +440,7 @@ dark:hover:bg-white/10 dark:hover:shadow-cyan-500/10"
 
   </div>
 )}
-          {/* MILESTONES */}
-          {/* {tab === "milestones" && (
-  <div className="mt-6">
-    {project.milestones && project.milestones.length > 0 ? (
-      <div className="space-y-4">
-        {project.milestones.map((milestone, index) => {
-          const completed = project.raised >= milestone.amount;
-
-          return (
-            <div
-              key={index}
-              className={`border rounded-xl p-5 shadow-sm ${
-                completed ? "bg-green-50 border-green-400" : "bg-white"
-              }`}
-            >
-              <h4 className="font-semibold text-lg">{milestone.title}</h4>
-
-              <p className="text-gray-500 mt-1">
-                Target ₹{milestone.amount}
-              </p>
-
-              <p
-                className={`mt-2 font-medium ${
-                  completed ? "text-green-600" : "text-gray-400"
-                }`}
-              >
-                {completed ? "Completed ✅" : "Not started"}
-              </p>
-            </div>
-          );
-        })}
-      </div>
-    ) : (
-      <p className="text-gray-500">No milestones yet</p>
-    )}
-  </div>
-)} */}
+         
 
   {tab === "milestones" && (
   <div className="mt-6">
@@ -773,18 +496,7 @@ ${completed
   </div>
 )}
 
-{/* {tab === "updates" && (
-  <div className="mt-6 space-y-3">
-    {updates.length === 0 && <p>No updates yet</p>}
 
-    {updates.map((u) => (
-      <div key={u.id} className="border p-3 rounded">
-        <p className="text-sm text-gray-500">{u.time}</p>
-        <p>{u.text}</p>
-      </div>
-    ))}
-  </div>
-)} */}
 
 {tab === "updates" && (
   <div className="mt-6 space-y-4">
@@ -968,23 +680,7 @@ bg-slate-200 dark:bg-white/10">
 
     </div>
 
-    {/* back button */}
-    {/* <button
-  onClick={handleFund}
-  disabled={
-    project.raised >= project.goal ||
-    (project.deadline && new Date(project.deadline) < new Date())
-  }
-  className={`w-full py-3 rounded-full font-semibold text-white transition
-    ${
-      project.raised >= project.goal
-        ? "bg-gray-400 cursor-not-allowed"
-        : "bg-gradient-to-r from-indigo-500 to-emerald-400 hover:opacity-90"
-    }
-  `}
->
-  {project.raised >= project.goal ? "Goal Reached 🎉" : "⚡ Back this project"}
-</button> */}
+    
 
 <button
   disabled={daysLeft === 0 || project.raised >= project.goal}
@@ -1015,9 +711,7 @@ bg-slate-200 dark:bg-white/10">
     {/* save + share */}
     <div className="flex gap-3 mt-4">
 
-      {/* <button className="flex-1 py-2 rounded-full border hover:bg-gray-50">
-        ♡ Save
-      </button> */}
+      
 
      <button
   onClick={() => setShowShare(true)}

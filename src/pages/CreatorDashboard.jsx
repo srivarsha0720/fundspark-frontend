@@ -12,20 +12,16 @@ const [updateText, setUpdateText] = useState("");
 
 
 
-  //const projects = JSON.parse(localStorage.getItem("projects")) || [];
+  
 
   // show only creator projects
   const myProjects = projects.filter(p => p.creator_id === user?.id);
 
-  // const handleDelete = (id) => {
-  //   const updated = projects.filter(p => p.id !== id);
-  //   localStorage.setItem("projects", JSON.stringify(updated));
-  //   window.location.reload();
-  // };
+  
   const handleDelete = async (id) => {
   const token = localStorage.getItem("token");
 
-  const res = await fetch(`http://localhost:5000/api/projects/${id}`, {
+  const res = await fetch(`https://fundspark-backend.onrender.com/api/projects/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,
@@ -44,12 +40,12 @@ const [updateText, setUpdateText] = useState("");
 
   if (!user) return <div className="p-10">Please login</div>;
 
-//  if (loading) return <div className="p-10">Loading...</div>;
+
 
 
   const fetchProjects = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/projects");
+      const res = await fetch("https://fundspark-backend.onrender.com/api/projects");
       const data = await res.json();
 
       if (res.ok) {
@@ -74,7 +70,7 @@ const handlePostUpdate = async (projectId) => {
 
   try {
     const res = await fetch(
-      `http://localhost:5000/api/projects/${projectId}/updates`,   // ✅ correct route
+      `https://fundspark-backend.onrender.com/api/projects/${projectId}/updates`,   // ✅ correct route
       {
         method: "POST",
         headers: {
@@ -99,76 +95,9 @@ const handlePostUpdate = async (projectId) => {
     alert("Update failed");
   }
 };
-//   return (
-//     <div className="p-10">
-//       <h1 className="text-2xl font-bold mb-6">My Projects</h1>
 
-//       <button
-//         onClick={() => navigate("/start")}
-//         className="bg-blue-600 text-white px-4 py-2 rounded mb-6"
-//       >
-//         + Create New Project
-//       </button>
 
-//       {myProjects.length === 0 ? (
-//         <p>No projects created yet</p>
-//       ) : (
-//         <div className="grid md:grid-cols-3 gap-6">
-//           {myProjects.map((p) => (
-//             <div key={p.id} className="border p-4 rounded shadow">
-//               <img src={p.image} className="w-full h-[450px] object-cover rounded-2xl" />
 
-//               <h2 className="font-bold mt-2">{p.title}</h2>
-
-//               <div className="flex gap-2 mt-3">
-//                 <button
-//                   onClick={() => navigate(`/project/${p.id}`)}
-//                   className="text-blue-600"
-//                 >
-//                   View
-//                 </button>
-
-//                <button
-//   onClick={() =>
-//     setUpdateOpenId(updateOpenId === p.id ? null : p.id)
-//   }
-//   className="text-green-600"
-// >
-//   Update
-// </button>
-
-//                 <button
-//                   onClick={() => handleDelete(p.id)}
-//                   className="text-red-600"
-//                 >
-//                   Delete
-//                 </button>
-//               </div>
-
-//               {updateOpenId === p.id && (
-//   <div className="mt-3">
-//     <textarea
-//       placeholder="Write project progress..."
-//       className="w-full border p-2 rounded"
-//       value={updateText}
-//       onChange={(e) => setUpdateText(e.target.value)}
-//     />
-
-//     <button
-//       onClick={() => handlePostUpdate(p.id)}
-//       className="mt-2 bg-green-500 text-white px-3 py-1 rounded"
-//     >
-//       Post Update
-//     </button>
-//   </div>
-// )}
-
-//             </div>
-//           ))}
-//         </div>
-//       )}
-//     </div>
-//   );
 
 
 return (
