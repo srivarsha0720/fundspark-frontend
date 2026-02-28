@@ -60,7 +60,7 @@ if (!user) {
 
 const token = localStorage.getItem("token");
 
-const res = await fetch("/api/projects/create", {
+const res = await fetch("https://fundspark-backend.onrender.com/api/projects/create", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
