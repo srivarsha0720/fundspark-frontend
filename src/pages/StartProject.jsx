@@ -126,7 +126,8 @@ setLoading(false);
 
       <input
         placeholder="Funding Goal"
-        type="number"
+        type="text"
+        inputMode="numeric"
         value={goal}
         onChange={(e) => setGoal(e.target.value)}
         className="w-full bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 focus:border-blue-500 outline-none rounded-lg px-4 py-2.5 text-gray-800 dark:text-white placeholder-gray-400 transition"
@@ -161,7 +162,8 @@ setLoading(false);
     />
 
     <input
-      type="number"
+      type="text"
+      inputMode="numeric"
       placeholder="Unlock amount"
       value={m.amount}
       onChange={(e) =>
@@ -198,7 +200,8 @@ setLoading(false);
     />
 
     <input
-      type="number"
+      type="text"
+      inputMode="numeric"
       placeholder="Minimum amount"
       value={reward.amount}
       onChange={(e) =>
