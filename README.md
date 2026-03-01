@@ -6,7 +6,7 @@ FundSpark – A Crowdfunding Web Application
 ---
 ## Project Links
 
-Live Application (Netlify):https://fundspark.netlify.app/
+Live Application (Vercel):https://fundspark-crowd.vercel.app/
 
 Backend API (Render):https://fundspark-backend.onrender.com
 
@@ -33,7 +33,7 @@ Users can register, log in, create projects, browse by categories, and manage th
 - 📄 Project Details Page
 - 💳 Contribution Flow
 - 🌐 Responsive UI
-- 🚀 Deployed on Netlify
+- 🚀 Deployed on Vercel
 
 ---
 
@@ -54,7 +54,7 @@ Database:
 - Supabase 
 
 Deployment:
-- Netlify (Frontend)
+- Vercel (Frontend)
 - Render (Backend)
 
 ---
@@ -89,7 +89,7 @@ npm run dev
 
 ## 🌐 Deployment Link
 
-🔗https://fundspark.netlify.app/
+🔗https://fundspark-crowd.vercel.app/
 
 ---
 
