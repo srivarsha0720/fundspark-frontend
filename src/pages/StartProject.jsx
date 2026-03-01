@@ -14,13 +14,13 @@ const StartProject = () => {
   const [loading, setLoading] = useState(false);
   const [deadline, setDeadline] = useState("");
   const [milestones, setMilestones] = useState([
-  { title: "", amount: "" }
+  { title: "", amount: 0 }
 ]);
 const [rewards, setRewards] = useState([
-  { title: "", amount: "", description: "" }
+  { title: "", amount: 0, description: "" }
 ]);
 const addReward = () => {
-  setRewards([...rewards, { title: "", amount: "", description: "" }]);
+  setRewards([...rewards, { title: "", amount: 0, description: "" }]);
 };
 const handleRewardChange = (index, field, value) => {
   const updated = [...rewards];
@@ -28,7 +28,7 @@ const handleRewardChange = (index, field, value) => {
   setRewards(updated);
 };
 const addMilestone = () => {
-  setMilestones([...milestones, { title: "", amount: "" }]);
+  setMilestones([...milestones, { title: "", amount: 0 }]);
 };
 
 const handleMilestoneChange = (index, field, value) => {
@@ -128,7 +128,7 @@ setLoading(false);
         placeholder="Funding Goal"
         type="number"
         value={goal}
-        onChange={(e) => setGoal(e.target.value)}
+        onChange={(e) => setGoal(Number(e.target.value))}
         className="w-full bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 focus:border-blue-500 outline-none rounded-lg px-4 py-2.5 text-gray-800 dark:text-white placeholder-gray-400 transition"
       />
 
@@ -165,7 +165,7 @@ setLoading(false);
       placeholder="Unlock amount"
       value={m.amount}
       onChange={(e) =>
-        handleMilestoneChange(i, "amount", e.target.value)
+        handleMilestoneChange(i, "amount", Number(e.target.value))
       }
       className="w-full bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 focus:border-blue-500 outline-none rounded-lg px-4 py-2.5 text-gray-800 dark:text-white placeholder-gray-400 transition"
     />
@@ -202,7 +202,7 @@ setLoading(false);
       placeholder="Minimum amount"
       value={reward.amount}
       onChange={(e) =>
-        handleRewardChange(index, "amount", e.target.value)
+        handleRewardChange(index, "amount", Number(e.target.value))
       }
       className="w-full bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 focus:border-blue-500 outline-none rounded-lg px-4 py-2.5 text-gray-800 dark:text-white placeholder-gray-400 transition"
     />
