@@ -11,7 +11,7 @@ const StartProject = () => {
   const [goal, setGoal] = useState("");
   const [image, setImage] = useState("");
   const [category, setCategory] = useState("");
-  
+  const [loading, setLoading] = useState(false);
   const [deadline, setDeadline] = useState("");
   const [milestones, setMilestones] = useState([
   { title: "", amount: "" }
@@ -44,6 +44,7 @@ useEffect(() => {
 
   const handleCreate =async (e) => {
     e.preventDefault();
+    setLoading(true);
     console.log("clicked");
 if (!user) {
     alert("Please login to create project");
@@ -51,7 +52,7 @@ if (!user) {
     return;
   }
 
-  if ( !title || !desc || !goal || !deadline) {
+  if ( !title || !desc || !goal || !deadline || !image || !category ) {
     alert("Please fill required fields");
     return;
   }
@@ -86,6 +87,7 @@ if (res.ok) {
 } else {
   alert(data.message);
 }
+setLoading(false);
 };
     
 
@@ -142,7 +144,7 @@ if (res.ok) {
   type="date"
   value={deadline}
   onChange={(e) => setDeadline(e.target.value)}
-  className="w-full bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 focus:border-blue-500 outline-none rounded-lg px-4 py-2.5 text-gray-800 dark:text-white placeholder-gray-400 transition"
+  className="w-full bg-gray-800 text-white px-4 py-2 rounded-lg border border-gray-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 outline-none"
   placeholder="Deadline"
 />
 <h3 className="font-semibold mt-6 mb-2">Funding Milestones</h3>
@@ -223,17 +225,21 @@ if (res.ok) {
 >
   + Add Reward
 </button>
-      <button type="button"
-        onClick={handleCreate}
-       className="w-full mt-4 py-3 rounded-xl font-semibold text-white 
-  bg-gradient-to-r from-indigo-500 to-cyan-500 
-  hover:from-indigo-600 hover:to-cyan-600 
-  shadow-md hover:shadow-lg 
-  transition duration-200 active:scale-[0.98]"
+      <button
+  type="button"
+  onClick={handleCreate}
+  disabled={loading}
+  className="w-full mt-4 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-500 to-cyan-500 hover:from-indigo-600 hover:to-cyan-600 shadow-md hover:shadow-lg transition duration-200 active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-60"
 >
-    
-        🚀Create Project
-      </button>
+  {loading ? (
+    <>
+      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+      Creating...
+    </>
+  ) : (
+    "🚀 Create Project"
+  )}
+</button>
     </div>
     </div>
   );
