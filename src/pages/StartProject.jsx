@@ -144,7 +144,7 @@ setLoading(false);
   type="date"
   value={deadline}
   onChange={(e) => setDeadline(e.target.value)}
-  className="w-full bg-gray-800 text-white px-4 py-2 rounded-lg border border-gray-600 focus:border-cyan-400 focus:ring-2 focus:ring-cyan-500 outline-none"
+  className="w-full bg-white dark:bg-white/5 border border-gray-300 dark:border-white/10 focus:border-blue-500 outline-none rounded-lg px-4 py-2.5 text-gray-800 dark:text-white placeholder-gray-400 transition"
   placeholder="Deadline"
 />
 <h3 className="font-semibold mt-6 mb-2">Funding Milestones</h3>
