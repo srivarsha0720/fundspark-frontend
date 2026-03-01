@@ -1,4 +1,4 @@
-<img width="845" height="884" alt="Screenshot 2026-03-01 184844" src="https://github.com/user-attachments/assets/0c896b57-9d8e-4545-a776-01b22027e87c" /><img width="845" height="884" alt="Screenshot 2026-03-01 184844" src="https://github.com/user-attachments/assets/4f859cde-4871-4d62-a5e0-1d51419964f1" /># 🚀 FundSpark – Crowdfunding Platform 
+# 🚀 FundSpark – Crowdfunding Platform 
 
 ## 📌 Project Title
 FundSpark – A Crowdfunding Web Application
