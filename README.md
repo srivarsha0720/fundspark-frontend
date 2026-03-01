@@ -4,6 +4,15 @@
 FundSpark – A Crowdfunding Web Application
 
 ---
+## Project Links
+
+Live Application (Netlify):https://fundspark.netlify.app/
+
+Backend API (Render):https://fundspark-backend.onrender.com
+
+Backend Repository:https://github.com/srivarsha0720/fundspark-backend
+
+---
 
 ## 📖 Project Description
 
