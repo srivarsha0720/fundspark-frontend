@@ -114,12 +114,26 @@ Password:varsha@20
 
 ### Home Page
 <img width="845" height="884" alt="Screenshot 2026-03-01 184844" src="https://github.com/user-attachments/assets/72408802-1c54-4b30-9673-52fe5ed79450" />
+
+
 <img width="925" height="901" alt="Screenshot 2026-03-01 184935" src="https://github.com/user-attachments/assets/b824c93f-5894-476b-9e69-9747ff5253a5" />
 
 ### Projects Page
 
+<img width="1162" height="901" alt="Screenshot 2026-03-01 185001" src="https://github.com/user-attachments/assets/4ec8a196-69a3-43ec-9b2e-a6707bd70792" />
 
+<img width="1235" height="722" alt="Screenshot 2026-03-01 185049" src="https://github.com/user-attachments/assets/daefe580-1513-476c-acf3-dff623df216c" />
 
+<img width="1103" height="895" alt="Screenshot 2026-03-01 201321" src="https://github.com/user-attachments/assets/3990eee7-c2b7-4497-a211-327329e943e9" />
+
+### Create Project
+<img width="812" height="891" alt="Screenshot 2026-03-01 185139" src="https://github.com/user-attachments/assets/a526fd11-5170-4e11-bbe4-22062d9744da" />
+
+### Dashboard
+
+<img width="1895" height="865" alt="Screenshot 2026-03-01 185254" src="https://github.com/user-attachments/assets/1574e9b1-33a8-4c01-bb92-40c432b6e80c" />
+
+---
 ## 🎥 Video Walkthrough
 
 https://drive.google.com/file/d/19E5Xj695UfdNSK-5d7wnegB8FVhEq1mS/view?usp=sharing
