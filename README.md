@@ -113,12 +113,10 @@ Password:varsha@20
 ## 🎥 Screenshots
 
 ### Home Page
-
-
-
 <img width="845" height="884" alt="Screenshot 2026-03-01 184844" src="https://github.com/user-attachments/assets/72408802-1c54-4b30-9673-52fe5ed79450" />
+<img width="925" height="901" alt="Screenshot 2026-03-01 184935" src="https://github.com/user-attachments/assets/b824c93f-5894-476b-9e69-9747ff5253a5" />
 
-
+### Projects Page
 
 
 
