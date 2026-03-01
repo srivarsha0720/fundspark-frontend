@@ -1,4 +1,4 @@
-# 🚀 FundSpark – Crowdfunding Platform (Frontend)
+# 🚀 FundSpark – Crowdfunding Platform 
 
 ## 📌 Project Title
 FundSpark – A Crowdfunding Web Application
@@ -30,15 +30,23 @@ Users can register, log in, create projects, browse by categories, and manage th
 
 ## 🛠 Tech Stack Used
 
-- React.js
-- React Router DOM
-- JavaScript (ES6+)
-- node.js
-- express.js
-- Fetch API
-- CSS / Tailwind CSS
-- Supabase (Database & Auth)
-- Netlify (Deployment)
+Frontend:
+- React (Vite)
+- Tailwind CSS
+- Lucide React Icons
+
+Backend:
+- Node.js
+- Express.js
+- JWT Authentication
+- bcrypt
+
+Database:
+- Supabase 
+
+Deployment:
+- Netlify (Frontend)
+- Render (Backend)
 
 ---
 
@@ -81,25 +89,30 @@ npm run dev
 
 ## 🌐 Deployment Link
 
-🔗 https://resonant-haupia-e4103b.netlify.app
+🔗https://fundspark.netlify.app/
 
 ---
 
-## 🔗 Supabase Project
+## 🔗 Backend API Link
 
-Database & Authentication handled via Supabase.
+🔗https://fundspark-backend.onrender.com
+
 
 ---
 
-## 🔑 Test Login Credentials (Optional)
+## 🔑  Login Credentials 
 
 You can create your own account  
 OR use:
 
-Email: testuser@gmail.com  
-Password: 123456
+Email: varshaa@gmail.com
+Password:varsha@20
 
 ---
+
+## 🎥 Screenshots
+
+
 
 
 
@@ -109,7 +122,4 @@ https://drive.google.com/file/d/19E5Xj695UfdNSK-5d7wnegB8FVhEq1mS/view?usp=shari
 
 ---
 
-## 👨‍💻 Developed By
 
-Sri Varsha  
-Masai School – Construct Week Project
